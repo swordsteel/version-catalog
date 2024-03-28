@@ -5,11 +5,12 @@ jlleitschuhKtlintPlugin = "12.1.0"
 junitJupiter = "5.10.2"
 
 # kotlin version
-kotlin = "1.9.20"
+kotlin = "1.9.22"
 
 # lulz version
 lulzPluginCore = "0.2.0-SNAPSHOT"
 lulzPluginCommon = "0.3.0-SNAPSHOT"
+lulzLibraryTestUtility = "0.1.0-SNAPSHOT"
 
 [libraries]
 # third party dependencies
@@ -20,6 +21,14 @@ org-junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api
 org-junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junitJupiter" }
 org-junit-jupiter-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junitJupiter" }
 org-junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
+
+# spring boot dependencies
+org-jetbrains-kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" }
+org-springframework-spring-boot-starter = { group = "org.springframework.boot", name = "spring-boot-starter" }
+org-springframework-spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
+
+# lulz dependencies
+ltd-lulz-library-test-utility = { group = "ltd.lulz.library", name = "test-utility", version.ref = "lulzLibraryTestUtility" }
 
 # plugin common dependencies
 com-bmuschko-docker-gradle-plugin = { group = "com.bmuschko", name = "gradle-docker-plugin", version = "9.4.0" }
@@ -35,8 +44,13 @@ ltd-lulz-plugin-core = { group = "ltd.lulz.plugin.core", name = "ltd.lulz.plugin
 io-gitlab-arturbosch-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "arturboschDetektPlugin" }
 org-jlleitschuh-gradle-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "jlleitschuhKtlintPlugin" }
 
+# spring boot plugin
+io-spring-dependency-management = { id = "io.spring.dependency-management", version = "1.1.4" }
+org-springframework-boot = { id = "org.springframework.boot", version = "3.2.3" }
+
 # kotlin plugin
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
 
 # lulz plugin
 ltd-lulz-plugin-core = { id = "ltd.lulz.plugin.core", version.ref = "lulzPluginCore" }
