@@ -1,10 +1,18 @@
 [versions]
+# third party version
+arturboschDetektPlugin = "1.23.5"
+jlleitschuhKtlintPlugin = "12.1.0"
 junitJupiter = "5.10.2"
-kotlin = "1.9.22"
 
+# kotlin version
+kotlin = "1.9.20"
+
+# lulz version
 lulzPluginCore = "0.2.0-SNAPSHOT"
+lulzPluginCommon = "0.3.0-SNAPSHOT"
 
 [libraries]
+# third party dependencies
 io-mockk = { group = "io.mockk", name = "mockk", version = "1.13.9" }
 org-eclipse-jgit = { group = "org.eclipse.jgit", name = "org.eclipse.jgit", version = "6.8.0.202311291450-r" }
 org-junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiter" }
@@ -13,10 +21,34 @@ org-junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-
 org-junit-jupiter-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junitJupiter" }
 org-junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
 
-[plugins]
-io-gitlab-arturbosch-detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.5" }
-org-jlleitschuh-gradle-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "12.1.0" }
+# plugin common dependencies
+com-bmuschko-docker-gradle-plugin = { group = "com.bmuschko", name = "gradle-docker-plugin", version = "9.4.0" }
+io-gitlab-arturbosch-detekt-gradle-plugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "arturboschDetektPlugin" }
+org-jetbrains-kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+org-jlleitschuh-ktlint-gradle-plugin = { group = "org.jlleitschuh.gradle", name = "ktlint-gradle", version.ref = "jlleitschuhKtlintPlugin" }
 
+# plugin common dependencies lulz
+ltd-lulz-plugin-core = { group = "ltd.lulz.plugin.core", name = "ltd.lulz.plugin.core.gradle.plugin", version.ref = "lulzPluginCore" }
+
+[plugins]
+# third party plugin
+io-gitlab-arturbosch-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "arturboschDetektPlugin" }
+org-jlleitschuh-gradle-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "jlleitschuhKtlintPlugin" }
+
+# kotlin plugin
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 
+# lulz plugin
 ltd-lulz-plugin-core = { id = "ltd.lulz.plugin.core", version.ref = "lulzPluginCore" }
+ltd-lulz-plugin-common = { id = "ltd.lulz.plugin.common", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-detekt = { id = "ltd.lulz.plugin.common.common-detekt", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-library = { id = "ltd.lulz.plugin.common.library", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-library-manifest = { id = "ltd.lulz.plugin.common.library-manifest", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-library-publish = { id = "ltd.lulz.plugin.common.library-publish", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-ktlint = { id = "ltd.lulz.plugin.common.common-ktlint", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-repository = { id = "ltd.lulz.plugin.common.common-repository", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-service = { id = "ltd.lulz.plugin.common.service", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-service-component-test = { id = "ltd.lulz.plugin.common.service-component-test", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-service-container = { id = "ltd.lulz.plugin.common.service-container", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-service-integration-test = { id = "ltd.lulz.plugin.common.service-integration-test", version.ref = "lulzPluginCommon" }
+ltd-lulz-plugin-common-service-process-resource = { id = "ltd.lulz.plugin.common.service-process-resource", version.ref = "lulzPluginCommon" }

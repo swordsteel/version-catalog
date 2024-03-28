@@ -69,6 +69,7 @@ check_last_commit
 
 # unSnapshotCatalogVersion
 un_snapshot_catalog lulzPluginCore
+un_snapshot_catalog lulzPluginCommon
 
 # unSnapshotVersion
 un_snapshot_version
