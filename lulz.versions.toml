@@ -8,9 +8,9 @@ junitJupiter = "5.10.2"
 kotlin = "1.9.22"
 
 # lulz version
-lulzPluginCore = "0.2.0-SNAPSHOT"
-lulzPluginCommon = "0.3.0-SNAPSHOT"
-lulzLibraryTestUtility = "0.1.0-SNAPSHOT"
+lulzPluginCore = "0.2.0"
+lulzPluginCommon = "0.3.0"
+lulzLibraryTestUtility = "0.1.0"
 
 [libraries]
 # third party dependencies
