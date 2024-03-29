@@ -57,7 +57,7 @@ merge_into_master() {
 }
 
 snapshot_version() {
-    new_version="$(get_current_version | awk -F '.' '{print $1 "." $2 "." $3+1}')"
+    new_version="$(get_current_version | awk -F '.' '{print $1 "." $2+1 "." $3}')"
     sed -i "s/\(version\s*=\s*\)[0-9.]*/\1$new_version-SNAPSHOT/" gradle.properties
 }
 
