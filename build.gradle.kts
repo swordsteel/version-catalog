@@ -1,3 +1,5 @@
+import java.lang.System.getenv
+
 plugins {
     `version-catalog`
     `maven-publish`
@@ -14,12 +16,22 @@ catalog {
 
 publishing {
     repositories {
+
+        fun retrieveConfiguration(
+            property: String,
+            environment: String,
+        ): String? = project.findProperty(property)?.toString() ?: getenv(environment)
+
         // TODO configuration for publishing packages
         // maven {
+        //     name = "LuLz-Ltd"
         //     url = uri("https://")
-        //     credentials {
-        //         username =
-        //         password =
+        //     credentials(HttpHeaderCredentials::class) {
+        //         username = retrieveConfiguration("repositoryUser", "REPOSITORY_USER")
+        //         password = retrieveConfiguration("repositoryToken", "REPOSITORY_TOKEN")
+        //     }
+        //     authentication {
+        //         create("header", HttpHeaderAuthentication::class)
         //     }
         // }
     }

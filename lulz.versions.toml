@@ -8,7 +8,7 @@ junitJupiter = "5.10.2"
 kotlin = "1.9.22"
 
 # lulz version
-lulzPluginCore = "0.2.0"
+lulzPluginCore = "0.2.1-SNAPSHOT"
 lulzPluginCommon = "0.3.0"
 lulzLibraryTestUtility = "0.1.0"
 
